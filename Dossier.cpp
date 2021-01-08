@@ -85,8 +85,8 @@ std::string Dossier::chemin() const {
  // Crée un enfant avec le nom en argument
  
  void Dossier::creerNouveauDossier(const std::string& nouveauNom) {
-   Dossier nouveau(nouveauNom, this) ; 
-   elements.insert(nouveau.clone()) ; 
+   Dossier* nouveau = new Dossier(nouveauNom, this) ; 
+   elements.insert(nouveau) ; 
  }
 
  // Destructeur: libère la mémoire des enfants.

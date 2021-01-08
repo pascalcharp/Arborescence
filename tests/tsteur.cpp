@@ -53,9 +53,18 @@ public:
 };
 
 TEST_F(TestDossier, afficher) {
-  EXPECT_EQ(root.afficher (), "Nom: SD1 Chemin: SD1/ Taille: 0\nNom: SD2 Chemin: SD2/ Taille: 0\n") ; 
+  EXPECT_EQ(root.afficher (), "Nom: SD1 Chemin: /SD1/ Taille: 0\nNom: SD2 Chemin: /SD2/ Taille: 0\n") ; 
 }
 
 TEST_F(TestDossier, taille) {
   EXPECT_EQ(root.taille(), 0) ; 
+}
+
+TEST_F(TestDossier, reqElement) {
+  Element* e = root.reqElement("SD1") ; 
+  EXPECT_EQ(e->reqParent (), &root) ; 
+  EXPECT_EQ(e->reqNom (), "SD1") ; 
+  EXPECT_EQ(e->chemin (), "/SD1/") ; 
+  EXPECT_EQ(e->taille (), 0) ; 
+  EXPECT_EQ(e->afficher (), "") ; 
 }

@@ -16,6 +16,22 @@
 
 #include <string>
 
+/**
+ * \class Element
+ * Classe abstraite utilisée pour représenter un élément d'une arborescence.\n
+ * Un dossier contient des éléments, qui à leur tour peuvent être des dossiers
+ * ou des fichiers.\n
+ * Tout élément devra donc implémenter les méthodes suivantes:\n
+ * chemin(): afficher le chemin complet depuis la racine de l'arborescence\n
+ * taille(): afficher la mémoire occupée par l'élément\n
+ * afficher(): afficher les informations de base de l'élément\n
+ * clone(): retourner un pointeur à une copie de l'élément\n
+ * reqElement(): retourner un pointeur à l'élément\n
+ * reqElementFormate(): retourner une chaîne de caractère contenant les 
+ * informations de l'élément\n
+ * 
+ */
+
 class Element
 {
 public:

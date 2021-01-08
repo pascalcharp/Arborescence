@@ -22,7 +22,7 @@ const Element*    Element::reqParent()  const {return parent;}
 const std::string& Element::reqNom()    const {return nom;}
 
 std::string Element::chemin() const {
-  return parent ? parent->chemin () + "/" + nom : nom; 
+  return parent ? parent->chemin () + nom : nom; 
 }
 
 std::string Element::reqElementFormate() const {
